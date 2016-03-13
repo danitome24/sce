@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require easing
+//= require easyResponsiveTabs
+//= require jquery.etalage.min
+//= require jquery.openCarousel
+//= require move-top
+//= require navigation
+//= require star-rating
+//= require bootstrap.min
 //= require_tree .

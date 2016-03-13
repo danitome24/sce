@@ -2,13 +2,47 @@
 <html>
 <head>
   <title>Practica</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="header">
+  <div class="wrap">
+    <div class="header_top">
+      <div class="logo">
+        <%= image_tag "/assets/images/logo_horitzontal.png" %>
+      </div>
+      <div class="header_top_right">
+        <div class="search_box">
+          <span>Search</span>
+          <form>
+            <input type="text" value=""><input type="submit" value="">
+          </form>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <%= render 'layouts/navigation' %>
+  </div>
+</div>
+<!------------End Header ------------>
 <%= yield %>
 
+<div class="footer">
+  <div class="wrap">
+    <div class="copy_right">
+    </div>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="#">Terms of Use</a> :</li>
+        <li><a href="#">Privacy Policy</a> :</li>
+        <li><a href="contact.html">Contact Us</a> :</li>
+        <li><a href="#">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 </body>
 </html>
