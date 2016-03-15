@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'pages#home'
+  scope ":locale", locale: /es|en/ do
+    root 'pages#home'
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
