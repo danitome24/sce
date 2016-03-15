@@ -1,0 +1,5 @@
+<ul class="nav navbar-nav navbar-right">
+  <li><p class="navbar-text login-text">Welcome: <%= current_user.email %>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>
+  </li>
+</ul>

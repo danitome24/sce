@@ -14,7 +14,8 @@
  *= require easy-responsive-tabs
  *= require etalage
  *= require style
-  *= require navigation
+ *= require navigation
+ *= require app
  *= require_tree .
  *= require_self
  */
