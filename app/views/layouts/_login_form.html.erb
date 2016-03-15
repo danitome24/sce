@@ -12,29 +12,34 @@
               <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
             </div>
             or
-              <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:id => "login-nav"}) do |f| %>
-              <div class="form-group">
-                <%= f.label :email %><br />
-                <%= f.email_field :email, autofocus: true %>
-              </div>
-              <div class="form-group">
-                <%= f.label :password %><br />
-                <%= f.password_field :password, autocomplete: "off" %>
-                <div class="help-block text-right"><a href="">Forget the password ?</a></div>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <%= f.check_box :remember_me %>
-                  <%= f.label :remember_me %>
-                </label>
-              </div>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:id => "login-nav"}) do |f| %>
+                <div class="form-group">
+                  <%= f.label :email %><br/>
+                  <%= f.email_field :email, autofocus: true %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :password %><br/>
+                  <%= f.password_field :password, autocomplete: "off" %>
+                  <div class="help-block text-right">
+                    <%= link_to "Forget the password ?", new_password_path(resource_name) %></div>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <% if devise_mapping.rememberable? -%>
+                        <div class="field">
+                          <%= f.check_box :remember_me %>
+                          <%= f.label :remember_me %>
+                        </div>
+                    <% end -%>
+                  </label>
+                </div>
             <% end %>
           </div>
           <div class="bottom text-center">
-            New here ? <%= link_to('Join us', new_user_registration_path)  %>
+            New here ? <%= link_to('Join us', new_user_registration_path) %>
           </div>
         </div>
       </li>
