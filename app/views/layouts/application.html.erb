@@ -11,16 +11,21 @@
   <div class="wrap">
     <div class="header_top">
       <div class="logo">
-        <%= link_to image_tag("/assets/images/logo_horitzontal.png"), root_path  %>
+        <%= link_to image_tag("/assets/images/logo_horitzontal.png"), root_path %>
       </div>
       <div class="header_top_right">
         <div class="search_box">
-          <span><%= t 'search' %></span>
+          <p class="login-text"><%= t 'search' %></p>
           <form>
             <input type="text" value=""><input type="submit" value="">
           </form>
-          <div class="clear"></div>
+          <div class="languages-container">
+            <%= link_to "Castellano", params.merge({:locale => :es}), class: 'language-link' %>
+            <span class='language-link'>|</span>
+            <%= link_to "English", params.merge({:locale => :en}), class: 'language-link' %>
+          </div>
         </div>
+
       </div>
       <div class="clear"></div>
     </div>
