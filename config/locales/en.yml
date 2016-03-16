@@ -20,4 +20,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  search: "Search"
+  account_already: "Already have an account?"
+  login_via: "Login via"
+  or: "or"
+  email: "Email"
+  password: "Password"
+  forget_password: "Forget the password?"
+  sign_in: "Sign in"
+  remember_me: "Remember me"
+  new_here: "New here?"
+  join_us: "Join us"
+  terms_of_use: "Terms of use"
+  privacy_policy: "Privacy Policy"
+  contact_us: "Contact us"
+  sitemap: "Sitemap"
+  logout: "Logout"
