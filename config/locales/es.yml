@@ -39,3 +39,5 @@ es:
   home: "Inicio"
   offer: "Ofertas"
   category: "Categorías"
+  register: "Registro"
+  password_confirmation: "Confirmación de password"

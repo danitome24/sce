@@ -39,3 +39,5 @@ en:
   home: "Home"
   offer: "Offers"
   category: "Categories"
+  register: "Register"
+  password_confirmation: "Password confirmation"
