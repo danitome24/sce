@@ -41,3 +41,8 @@ es:
   category: "Categorías"
   register: "Registro"
   password_confirmation: "Confirmación de password"
+  change_password: "Cambia la contraseña"
+  reset_password_instructions: "Envíame las instrucciones"
+  new_password: "Nueva contraseña"
+  confirm_new_password: "Confirma"
+  minimum_characters: "caracteres mínimos"

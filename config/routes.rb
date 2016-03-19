@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -7,7 +6,9 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   scope "/:locale", locale: /es|en/ do
     root 'pages#home'
+    devise_for :users, :controllers => { :passwords => 'passwords'}
   end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

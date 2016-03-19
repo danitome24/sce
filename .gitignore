@@ -15,5 +15,5 @@
 /log/*
 !/log/.keep
 /tmp
-
+/global_var.env
 .idea
