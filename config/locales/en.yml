@@ -46,3 +46,4 @@ en:
   new_password: "New password"
   confirm_new_password: "Confirm"
   minimum_characters: "minimum characters"
+  welcome: "Welcome %{username}!"
