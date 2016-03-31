@@ -1453,6 +1453,10 @@ a {
     color: #337ab7;
 }
 
+.categories ul li a.active {
+    color: #e44f2b;
+}
+
 a:hover {
     text-decoration: none;
 }

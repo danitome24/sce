@@ -21,7 +21,7 @@
             <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <% @categories.each do |category| %>
-                <li><a href="#"><%= t category.name %></a></li>
+                <li><%= link_to t(category.name), categories_path(category)%></li>
             <% end %>
           </ul>
         </li>
