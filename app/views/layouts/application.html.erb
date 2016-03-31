@@ -34,6 +34,8 @@
 </div>
 <!------------End Header ------------>
 <div class="container-fluid">
+  <%= render 'layouts/messages' %>
+  <%= devise_error_messages! %>
   <%= yield %>
 </div>
 
