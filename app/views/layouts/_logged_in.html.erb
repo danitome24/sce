@@ -1,5 +1,3 @@
-<ul class="nav navbar-nav navbar-right">
-  <li><p class="navbar-text login-text"><%= t('welcome', username: current_user.email) %>
-    <%= link_to(t('logout'), destroy_user_session_path, :method => :delete) %></p>
-  </li>
-</ul>
+<li><p class="navbar-text login-text"><%= t('welcome', username: current_user.email) %>
+  <%= link_to(t('logout'), destroy_user_session_path, :method => :delete) %></p>
+</li>

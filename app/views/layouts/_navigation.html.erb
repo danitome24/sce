@@ -20,19 +20,20 @@
             <%= t('category') %>
             <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Category 1</a></li>
-            <li><a href="#">Category 2</a></li>
-            <li><a href="#">Category 3</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <% @categories.each do |category| %>
+                <li><%= link_to t(category.name), categories_path(category)%></li>
+            <% end %>
           </ul>
         </li>
       </ul>
-      <%= if user_signed_in?
-            render 'layouts/logged_in'
-          else
-            render 'layouts/login_form'
-          end %>
+      <ul class="nav navbar-nav navbar-right">
+        <%= render 'layouts/navbar/basket_cart' %>
+        <%= if user_signed_in?
+              render 'layouts/logged_in'
+            else
+              render 'layouts/login_form'
+            end %>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
