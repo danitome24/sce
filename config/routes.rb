@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     root 'pages#home'
     get '/categories/:id', to: 'categories#show', as: 'categories'
     get '/basket', to: 'basket#index', as: 'basket'
-    devise_for :users, :controllers => { :passwords => 'passwords'}
+    get '/clients/new', to: 'clients#new', as: 'clients'
+    post '/clients', to: 'clients#create'
+    devise_for :users, :controllers => {:passwords => 'passwords', registrations: 'registrations'}
   end
 
 
