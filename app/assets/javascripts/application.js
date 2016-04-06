@@ -21,4 +21,5 @@
 //= require navigation
 //= require star-rating
 //= require bootstrap.min
+//= require app
 //= require_tree .

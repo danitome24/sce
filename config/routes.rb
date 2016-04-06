@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   scope "/:locale", locale: /es|en/ do
     root 'pages#home'
     get '/categories/:id', to: 'categories#show', as: 'categories'
+    get '/basket', to: 'basket#index', as: 'basket'
     devise_for :users, :controllers => { :passwords => 'passwords'}
   end
 
