@@ -1,3 +1,41 @@
-<li><p class="navbar-text login-text"><%= t('welcome', username: current_user.email) %>
-  <%= link_to(t('logout'), destroy_user_session_path, :method => :delete) %></p>
+  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Account
+    <b class="caret"></b></a>
+    <ul class="dropdown-menu">
+      <li>
+        <div class="navbar-content">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="http://placehold.it/120x120"
+                   alt="Alternate Text" class="img-responsive" />
+              <p class="text-center small">
+                <a href="#">Change Photo</a></p>
+            </div>
+            <div class="col-md-7">
+              <%= current_user.email %>
+              <p class="text-muted small">
+                mail@gmail.com</p>
+              <div class="divider">
+              </div>
+              <a href="#" class="btn btn-primary btn-sm active">View Profile</a>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-footer">
+          <div class="navbar-footer-content">
+            <div class="row">
+              <div class="col-md-6">
+                <a href="#" class="btn btn-default btn-sm">Change Passowrd</a>
+              </div>
+              <div class="col-md-6">
+                <%= link_to(t('logout'), destroy_user_session_path, :method => :delete,
+                            :class => 'btn btn-default btn-sm pull-right') %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </li>
+<li><p class="navbar-text login-text">
+
 </li>
