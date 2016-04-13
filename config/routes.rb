@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     get '/clients/new', to: 'clients#new', as: 'clients'
     post '/clients', to: 'clients#create'
     get '/clients', to: 'clients#show', as: 'clients_show'
+    get '/clients/edit', to: 'clients#edit'
+    patch '/clients/update', to: 'clients#update'
     devise_for :users, :controllers => {:passwords => 'passwords', registrations: 'registrations'}
   end
 

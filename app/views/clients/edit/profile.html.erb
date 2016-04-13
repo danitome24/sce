@@ -1,0 +1,33 @@
+<%= render 'layouts/partials/nav_profile' %>
+<div class="col-sm-9">
+  <%= form_for @client,  :url => url_for(:controller => 'clients', :action => 'update'), html: {role: 'form'} do |c| %>
+      <%= c.hidden_field :user_id, :value => current_user.id %>
+      <div class="col-md-6 form-group">
+        <%= c.label t('firstname') %><br>
+        <%= c.text_field :firstname, class: 'form-control' %>
+      </div>
+      <div class="col-md-6 form-group">
+        <%= c.label t('lastname') %><br>
+        <%= c.text_field :lastname, class: 'form-control' %>
+      </div>
+      <div class="col-md-6 form-group">
+        <%= c.label t('phone') %><br>
+        <%= c.text_field :phone, class: 'form-control'  %>
+      </div>
+      <div class="col-md-6 form-group">
+        <%= c.label t('address') %><br>
+        <%= c.text_field :address, class: 'form-control'  %>
+      </div>
+      <div class="col-md-6 form-group">
+        <%= c.label t('city') %><br>
+        <%= c.text_field :city, class: 'form-control'  %>
+      </div>
+      <div class="col-md-6 form-group">
+        <%= c.label t('postalcode') %><br>
+        <%= c.text_field :postalcode, class: 'form-control'  %>
+      </div>
+      <div class="actions">
+        <%= c.submit t('update'), class: 'btn btn-primary' %>
+      </div>
+  <% end %>
+</div>
