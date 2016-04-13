@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get '/basket', to: 'basket#index', as: 'basket'
     get '/clients/new', to: 'clients#new', as: 'clients'
     post '/clients', to: 'clients#create'
+    get '/clients', to: 'clients#show', as: 'clients_show'
     devise_for :users, :controllers => {:passwords => 'passwords', registrations: 'registrations'}
   end
 

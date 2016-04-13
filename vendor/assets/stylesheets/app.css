@@ -18,6 +18,7 @@ span.language-link, .language-link {
     margin-left: 10px;
     margin-top: 10px;
 }
+
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
     position: absolute;
@@ -33,32 +34,61 @@ span.language-link, .language-link {
     padding-left: 0;
     padding-right: 0;
 }
+
 .navbar-wrapper .navbar {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.navbar-content
-{
-    width:320px;
+.navbar-content {
+    width: 320px;
     padding: 15px;
-    padding-bottom:0px;
+    padding-bottom: 0px;
 }
-.navbar-content:before, .navbar-content:after
-{
+
+.navbar-content:before, .navbar-content:after {
     display: table;
     content: "";
     line-height: 0;
 }
+
 .navbar-nav.navbar-right:last-child {
     margin-right: 15px !important;
 }
-.navbar-footer
-{
-    background-color:#DDD;
+
+.navbar-footer {
+    background-color: #DDD;
 }
-.navbar-footer-content { padding:15px 15px 15px 15px; }
+
+.navbar-footer-content {
+    padding: 15px 15px 15px 15px;
+}
+
 .dropdown-menu {
     padding: 0px;
     overflow: hidden;
 }
+
+.sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+}
+
+.sidebar-nav .navbar ul {
+    float: none;
+}
+
+.sidebar-nav .navbar ul:not {
+    display: block;
+}
+
+.sidebar-nav .navbar li {
+    float: none;
+    display: block;
+}
+
+.sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
