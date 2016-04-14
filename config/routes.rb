@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get '/clients', to: 'clients#show', as: 'clients_show'
     get '/clients/edit', to: 'clients#edit'
     patch '/clients/update', to: 'clients#update'
+    patch '/clients/update_pass', to: 'clients#update_password'
     devise_for :users, :controllers => {:passwords => 'passwords', registrations: 'registrations'}
   end
 
