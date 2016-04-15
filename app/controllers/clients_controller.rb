@@ -52,10 +52,10 @@ class ClientsController < ApplicationController
     @actions = $actions_profile
     if @client.update(client_params)
       flash[:success] = t('profile_update_correct')
-      render 'clients/edit/profile'
+      redirect_to controller: 'clients', action: 'edit'
     else
       flash[:error] = t('error')
-      render 'clients/edit/profile'
+      redirect_to root_path
     end
   end
 

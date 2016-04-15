@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
 
-  before_filter :categories
+  before_filter :categories, :client
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -17,5 +17,9 @@ class ApplicationController < ActionController::Base
 
   def categories
     @categories = Category.all
+  end
+
+  def client
+    @client = Client.find_by user_id: current_user.id
   end
 end
