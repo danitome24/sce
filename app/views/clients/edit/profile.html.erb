@@ -1,33 +1,47 @@
 <%= render 'layouts/partials/nav_profile' %>
+<%= @client.errors.full_messages.first if @client.errors.any? %>
 <div class="col-sm-9">
-  <%= form_for @client,  :url => url_for(:controller => 'clients', :action => 'update'), html: {role: 'form'} do |c| %>
+  <%= form_for @client, :url => url_for(:controller => 'clients', :action => 'update'), :html => {:multipart => true, role: 'form'} do |c| %>
       <%= c.hidden_field :user_id, :value => current_user.id %>
-      <div class="col-md-6 form-group">
-        <%= c.label t('firstname') %><br>
-        <%= c.text_field :firstname, class: 'form-control' %>
+      <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <input type="file" id="exampleInputFile">
+        <p class="help-block">Example block-level help text here.</p>
       </div>
-      <div class="col-md-6 form-group">
-        <%= c.label t('lastname') %><br>
-        <%= c.text_field :lastname, class: 'form-control' %>
-      </div>
-      <div class="col-md-6 form-group">
-        <%= c.label t('phone') %><br>
-        <%= c.text_field :phone, class: 'form-control'  %>
-      </div>
-      <div class="col-md-6 form-group">
-        <%= c.label t('address') %><br>
-        <%= c.text_field :address, class: 'form-control'  %>
-      </div>
-      <div class="col-md-6 form-group">
-        <%= c.label t('city') %><br>
-        <%= c.text_field :city, class: 'form-control'  %>
-      </div>
-      <div class="col-md-6 form-group">
-        <%= c.label t('postalcode') %><br>
-        <%= c.text_field :postalcode, class: 'form-control'  %>
-      </div>
-      <div class="actions">
-        <%= c.submit t('update'), class: 'btn btn-primary' %>
-      </div>
+      <div class="col-md-12 form-group">
+        <div class="input-group image-preview">
+          <%= c.label t('photo') %><br>
+          <%= c.file_field :image, class: 'filestyle', 'data-icon' => false %>
+          <% if c.object.image? %>
+              <%= image_tag c.object.image.thumb.url %>
+          <% end %>
+        </div>
+        <div class="col-md-6 form-group">
+          <%= c.label t('firstname') %><br>
+          <%= c.text_field :firstname, class: 'form-control' %>
+        </div>
+        <div class="col-md-6 form-group">
+          <%= c.label t('lastname') %><br>
+          <%= c.text_field :lastname, class: 'form-control' %>
+        </div>
+        <div class="col-md-6 form-group">
+          <%= c.label t('phone') %><br>
+          <%= c.text_field :phone, class: 'form-control' %>
+        </div>
+        <div class="col-md-6 form-group">
+          <%= c.label t('address') %><br>
+          <%= c.text_field :address, class: 'form-control' %>
+        </div>
+        <div class="col-md-6 form-group">
+          <%= c.label t('city') %><br>
+          <%= c.text_field :city, class: 'form-control' %>
+        </div>
+        <div class="col-md-6 form-group">
+          <%= c.label t('postalcode') %><br>
+          <%= c.text_field :postalcode, class: 'form-control' %>
+        </div>
+        <div class="actions">
+          <%= c.submit t('update'), class: 'btn btn-primary' %>
+        </div>
   <% end %>
-</div>
+  </div>

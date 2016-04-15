@@ -64,3 +64,5 @@ en:
   city: "City"
   postalcode: "Postal code"
   profile_update_correct: "Profile updated correctly"
+  photo: "Photo"
+  error: "There was some error. Please contact with administrator."

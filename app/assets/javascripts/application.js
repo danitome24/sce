@@ -22,4 +22,5 @@
 //= require star-rating
 //= require bootstrap.min
 //= require app
+//= require bootstrap-filestyle.min
 //= require_tree .

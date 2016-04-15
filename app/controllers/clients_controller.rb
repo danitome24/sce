@@ -47,20 +47,21 @@ class ClientsController < ApplicationController
 
   def update
     @selected = (params.has_key?(:a)) ? params[:a] : $actions_profile[0]
-    @params = 'client_' + @selected + '_params'
+    #@params = 'client_' + @selected + '_params'
     @client = Client.find_by user_id: current_user.id
-
+    @actions = $actions_profile
     if @client.update(client_params)
-      redirect_to root_path
       flash[:success] = t('profile_update_correct')
+      render 'clients/edit/profile'
     else
+      flash[:error] = t('error')
       render 'clients/edit/profile'
     end
   end
 
   private
   def client_params
-    params.require(:client).permit(:firstname, :lastname, :phone, :address, :city, :postalcode, :ccnumber, :user_id)
+    params.require(:client).permit(:firstname, :lastname, :phone, :address, :city, :postalcode, :ccnumber, :user_id, :image)
   end
 
   def user_params

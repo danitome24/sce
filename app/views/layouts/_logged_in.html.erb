@@ -12,11 +12,8 @@
             </div>
             <div class="col-md-7">
               <%= current_user.email %>
-              <p class="text-muted small">
-                mail@gmail.com</p>
               <div class="divider">
               </div>
-              <%= link_to('Perfil', {controller: 'clients', action: 'edit'}, class: 'btn btn-primary btn-sm active') %>
             </div>
           </div>
         </div>
@@ -24,7 +21,7 @@
           <div class="navbar-footer-content">
             <div class="row">
               <div class="col-md-6">
-                <a href="#" class="btn btn-default btn-sm">Change Passowrd</a>
+                <%= link_to('Perfil', {controller: 'clients', action: 'edit'}, class: 'btn btn-primary btn-sm active') %>
               </div>
               <div class="col-md-6">
                 <%= link_to(t('logout'), destroy_user_session_path, :method => :delete,

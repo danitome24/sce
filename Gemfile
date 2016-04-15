@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Upload images gem
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
 # Mysql gem file
 gem 'mysql2', '~> 0.3.18'
 # Devise gem

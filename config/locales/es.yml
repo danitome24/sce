@@ -64,3 +64,5 @@ es:
   city: "Ciudad"
   postalcode: "Código postal"
   profile_update_correct: "Perfil actualizado correctamente"
+  photo: "Foto"
+  error: "Ha habido algún error. Contacte con el administrador."
