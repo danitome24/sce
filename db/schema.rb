@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415161357) do
+ActiveRecord::Schema.define(version: 20160418174032) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",        limit: 255,   null: false
@@ -41,6 +41,29 @@ ActiveRecord::Schema.define(version: 20160415161357) do
 
   add_index "clients", ["user_id"], name: "index_clients_on_user_id", using: :btree
 
+  create_table "product_translations", force: :cascade do |t|
+    t.integer  "product_id",  limit: 4,     null: false
+    t.string   "locale",      limit: 255,   null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+  end
+
+  add_index "product_translations", ["locale"], name: "index_product_translations_on_locale", using: :btree
+  add_index "product_translations", ["product_id"], name: "index_product_translations_on_product_id", using: :btree
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name",        limit: 255,   null: false
+    t.text     "description", limit: 65535, null: false
+    t.float    "price",       limit: 24,    null: false
+    t.integer  "category_id", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -59,4 +82,5 @@ ActiveRecord::Schema.define(version: 20160415161357) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "products", "categories"
 end

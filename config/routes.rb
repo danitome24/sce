@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   scope "/:locale", locale: /es|en/ do
+    resources :categories do
+      resources :products
+    end
     root 'pages#home'
-    get '/categories/:id', to: 'categories#show', as: 'categories'
     get '/basket', to: 'basket#index', as: 'basket'
     get '/clients/new', to: 'clients#new', as: 'clients'
     post '/clients', to: 'clients#create'

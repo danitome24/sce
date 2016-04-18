@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# I18n backend
+gem 'globalize', '~> 5.0.0'
 # Upload images gem
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'

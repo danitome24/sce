@@ -8,9 +8,9 @@
               <h3><%= t ('browse_categories') %></h3>
               <% @categories.each do |category| %>
                   <% if @category.name === category.name %>
-                      <li><%= link_to t(category.name), categories_path(category), class:'active' %></li>
+                      <li><%= link_to t(category.name), category_path(category), class:'active' %></li>
                   <% else %>
-                      <li><%= link_to t(category.name), categories_path(category) %></li>
+                      <li><%= link_to t(category.name), category_path(category) %></li>
                   <% end %>
               <% end %>
             </ul>
