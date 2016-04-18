@@ -66,3 +66,8 @@ en:
   profile_update_correct: "Profile updated correctly"
   photo: "Photo"
   error: "There was some error. Please contact with administrator."
+  name_card: "Card Holder's Name"
+  number_card: "Card number"
+  expiration_date: "Expiration date"
+  month: "Month"
+  year: "Year"

@@ -1,2 +1,42 @@
 <%= render 'layouts/partials/nav_profile' %>
-<h1>Accounts</h1>
+<div class="col-sm-9">
+  <%= form_for(@client, :url => {:action => 'update'}, html: {role: 'form'}) do |c| %>
+      <div class="col-sm-12">
+        <legend>Payment</legend>
+      </div>
+      <div class="row">
+        <div class="col-md-4 form-group">
+          <%= c.label t('name_card'), class: 'control-label' %>
+          <%= c.text_field :namecard, class: 'form-control', placeholder: 'Car Holder\'s Name' %>
+        </div>
+        <div class="col-md-4 form-group">
+          <%= c.label t('number_card'), class: 'control-label' %>
+          <%= c.text_field :card_number, class: 'form-control', placeholder: 'Car Holder\'s Name' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 form-group">
+          <%= c.label t('expiration_date'), class: 'control-label' %>
+          <div class="row">
+            <div class="col-xs-3">
+              <%= c.label t('month') %>
+              <%= c.select :expiration_month, 1..12 %>
+            </div>
+            <div class="col-xs-3">
+              <%= c.label t('year') %>
+              <%= c.select :expiration_year, Date.today.year.. 8.years.from_now.year %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 form-group">
+          <%= c.label 'CVV', class: 'control-label' %>
+          <%= c.text_field :cvv, class: 'form-control', placeholder: 'Car Holder\'s Name' %>
+        </div>
+      </div>
+      <div class="col-md-12 form-group">
+        <div class="actions">
+          <%= c.submit t('update'), class: 'btn btn-primary' %>
+        </div>
+      </div>
+  <% end %>
+</div>

@@ -66,3 +66,8 @@ es:
   profile_update_correct: "Perfil actualizado correctamente"
   photo: "Foto"
   error: "Ha habido algún error. Contacte con el administrador."
+  name_card: "Nombre del propietario"
+  number_card: "Número de tarjeta"
+  expiration_date: "Fecha de expiración"
+  month: "Mes"
+  year: "Año"

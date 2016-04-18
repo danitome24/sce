@@ -20,6 +20,8 @@ class ApplicationController < ActionController::Base
   end
 
   def client
-    @client = Client.find_by user_id: current_user.id
+    if user_signed_in?
+      @client = Client.find_by user_id: current_user.id
+    end
   end
 end
