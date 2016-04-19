@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @categories = Category.all
-    @category = Category.find_by params[:id]
+    category = Category.find_by(id: params[:category_id])
+    @product = category.products.with_translations(I18n.locale).find_by(id: params[:id])
   end
 end
