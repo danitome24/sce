@@ -1,6 +1,9 @@
 <%= render 'layouts/partials/nav_profile' %>
 <%= @client.errors.full_messages.first if @client.errors.any? %>
 <div class="col-sm-9">
+  <div class="col-sm-12">
+    <legend><%= t('profile') %></legend>
+  </div>
   <%= form_for @client, :url => url_for(:controller => 'clients', :action => 'update'), :html => {:multipart => true, role: 'form'} do |c| %>
       <%= c.hidden_field :user_id, :value => current_user.id %>
       <div class="col-md-12 form-group">

@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
 
-  $actions_profile = %w(profile password account)
+  $actions_profile = %w(profile password payment_account)
 
   def new
     @client = Client.new
