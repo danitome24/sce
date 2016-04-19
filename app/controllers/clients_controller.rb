@@ -6,12 +6,6 @@ class ClientsController < ApplicationController
     @client = Client.new
   end
 
-  def show
-    @client = Client.find_by user_id: current_user.id
-    @actions = $actions_profile
-    @selected = (params.has_key?(:a)) ? params[:a] : $actions_profile[0]
-  end
-
   def create
     @client = Client.new(client_params)
     if @client.save
