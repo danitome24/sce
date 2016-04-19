@@ -79,3 +79,6 @@ es:
   add_cart: "Añadir carrito"
   price: "Precio"
   payment_account: "Cuenta de pago"
+  new_category: "Nueva categoría"
+  category_created: "Categoría creada correctamente!"
+  description: "Descripción"

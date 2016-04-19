@@ -79,3 +79,6 @@ en:
   add_cart: "Add cart"
   price: "Price"
   payment_account: "Payment account"
+  new_category: "New category"
+  category_created: "Category created successfuly"
+  description: "Description"
