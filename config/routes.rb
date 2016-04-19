@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :categories do
       resources :products
     end
+    resources :admins
     root 'pages#home'
     get '/basket', to: 'basket#index', as: 'basket'
     get '/clients/new', to: 'clients#new', as: 'clients'
