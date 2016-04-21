@@ -18,6 +18,17 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category = Category.find_by(id: params[:id])
+    if @category.destroy
+      flash[:success] = t('category_destroyed')
+      redirect_to controller: 'admins', method: 'show'
+    else
+      flash[:danger] = t('error')
+      redirect_to admin_path
+    end
+  end
+
   private
   def category_params
     params.require(:category).permit(:name, :description)

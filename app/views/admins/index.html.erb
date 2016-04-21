@@ -6,16 +6,23 @@
       <tr>
         <th class="col-md-2"><%= t('name') %></th>
         <th class="col-md-1"><%= t('actions') %> <%= link_to new_category_path, class: 'add-button link-color-black' do %>
-              <span class="glyphicon glyphicon-plus"></span><%= t('add') %></th><% end %>
-      </thead>
+              <span class="glyphicon glyphicon-plus"></span><%= t('add') %></th>
+          <% end %>
+          </thead>
       <tbody>
       <% @categories.each do |c| %>
-        <tr>
-          <td class="col-md-2"><%= c.name %></td>
-          <td class="col-md-1"><%= link_to edit_category_path(c), :class => 'link-color-black' do %>
-              <span class="glyphicon glyphicon-pencil"></span>
-          <% end %></td>
-        </tr>
+          <tr>
+            <td class="col-md-2"><%= c.name %></td>
+            <td class="col-md-1">
+              <%= link_to edit_category_path(c), :class => 'link-color-black' do %>
+                  <span class="glyphicon glyphicon-pencil"></span>
+              <% end %>
+              <%= link_to category_path(c), method: :delete, :class => 'link-color-black' do %>
+                  <span class="glyphicon glyphicon-remove"></span>
+
+              <% end %>
+            </td>
+          </tr>
       <% end %>
       </tbody>
     </table>

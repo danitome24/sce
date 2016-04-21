@@ -82,3 +82,4 @@ en:
   new_category: "New category"
   category_created: "Category created successfuly"
   description: "Description"
+  category_destroyed: "Category destroyed successfuly!"
