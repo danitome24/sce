@@ -22,10 +22,26 @@ class CategoriesController < ApplicationController
     @category = Category.find_by(id: params[:id])
     if @category.destroy
       flash[:success] = t('category_destroyed')
-      redirect_to controller: 'admins', method: 'show'
+      redirect_to controller: 'admins', action: 'index'
     else
       flash[:danger] = t('error')
       redirect_to admin_path
+    end
+  end
+
+  def edit
+    @category = Category.find_by(id: params[:id])
+  end
+
+  def update
+    @category = Category.find_by(id: params[:id])
+
+    if @category.update(category_params)
+      flash[:success] = t('category_updated')
+      redirect_to controller: 'admins', action: 'index'
+    else
+      flash[:error] = t('error')
+      redirect_to root_path
     end
   end
 

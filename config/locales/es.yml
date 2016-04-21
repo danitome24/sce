@@ -83,3 +83,5 @@ es:
   category_created: "Categoría creada correctamente!"
   description: "Descripción"
   category_destroyed: "Categoría borrada correctamente!"
+  category_updated: "Categoría actualizada correctamente!"
+  edit_category: "Editar categoría"
