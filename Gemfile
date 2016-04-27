@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 # I18n backend
+gem 'globalize-accessors', '~> 0.2.1'
 gem 'globalize', '~> 5.0.0'
 # Upload images gem
 gem 'carrierwave', '~> 0.10.0'

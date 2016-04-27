@@ -12,7 +12,7 @@
       <tbody>
       <% @categories.each do |c| %>
           <tr>
-            <td class="col-md-2"><%= c.name %></td>
+            <td class="col-md-2"><%= link_to c.name, admin_path(c), class: 'link-color-black' %></td>
             <td class="col-md-1">
               <%= link_to edit_category_path(c), :class => 'link-color-black' do %>
                   <span class="glyphicon glyphicon-pencil"></span>
