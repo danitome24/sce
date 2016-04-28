@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# Deployment gems
+gem 'capistrano-rails', :group => :development
+gem 'capistrano3-puma'
+gem 'capistrano-rvm'
 # I18n backend
 gem 'globalize-accessors', '~> 0.2.1'
 gem 'globalize', '~> 5.0.0'
