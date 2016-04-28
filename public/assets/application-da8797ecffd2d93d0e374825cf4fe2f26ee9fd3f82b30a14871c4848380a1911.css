@@ -7632,8 +7632,7 @@ body {
 
 .product-articles p a {
     color: #e44f2b;
-    font-size;
-    14px;
+    font-size : 14px;
 }
 
 .product-articles p a:hover {
