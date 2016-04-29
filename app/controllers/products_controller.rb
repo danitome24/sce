@@ -26,6 +26,17 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    product = Product.find_by(id: params[:id])
+    if product.destroy
+      flash[:success] = t('product_destroyed')
+      redirect_to controller: 'admins', id: params[:category_id]
+    else
+      flash[:danger] = t('error')
+      redirect_to root_path
+    end
+  end
+
   def new
     @product = Product.new
   end
