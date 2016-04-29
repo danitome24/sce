@@ -11,6 +11,21 @@ class ProductsController < ApplicationController
     @product = category.products.with_translations(I18n.locale).find_by(id: params[:id])
   end
 
+  def edit
+    @product = Product.find_by(id: params[:id])
+  end
+
+  def update
+    @product = Product.find_by(id: params[:id])
+    if @product.update(product_params)
+      flash[:success] = t('product_updated')
+      redirect_to controller: 'admins', id: params[:category_id]
+    else
+      flash[:danger] = t('error')
+      redirect_to root_path
+    end
+  end
+
   def new
     @product = Product.new
   end
