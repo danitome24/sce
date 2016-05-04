@@ -11,7 +11,7 @@
           </ul>
           <div class="product-details">
             <div class="grid col-md-2">
-              <%= image_tag '/assets/images/'+@product.image %>
+              <%= image_tag @product.image.thumb.url %>
             </div>
             <div class="desc col-md-5">
               <h2><%= @product.name %></h2>

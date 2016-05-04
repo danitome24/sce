@@ -22,8 +22,14 @@
           <div class="section group">
             <% @products.each do |p| %>
                 <div class="grid_1_of_4 images_1_of_4">
-                  <h4><a href="preview.html"><%= p.name %></a></h4>
-                  <a href="preview.html"><%= image_tag('/assets/images/product.jpg') %></a>
+                  <h4><a href="#"><%= p.name %></a></h4>
+                  <a href="#">
+                    <% if p.image? %>
+                        <%= image_tag p.image.thumb.url %>
+                    <% else %>
+                        <img src="http://placehold.it/100x100"
+                             alt="Alternate Text"/>
+                    <% end %></a>
                   <div class="price-details">
                     <div class="price-number">
                       <p><span class="rupees"><%= p.price %> </span></p>
