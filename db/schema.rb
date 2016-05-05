@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419172015) do
+ActiveRecord::Schema.define(version: 20160505152919) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",        limit: 255,   null: false
@@ -41,6 +41,37 @@ ActiveRecord::Schema.define(version: 20160419172015) do
 
   add_index "clients", ["user_id"], name: "index_clients_on_user_id", using: :btree
 
+  create_table "order_items", force: :cascade do |t|
+    t.integer  "product_id",  limit: 4
+    t.integer  "order_id",    limit: 4
+    t.decimal  "unit_price",            precision: 12, scale: 3
+    t.integer  "quantity",    limit: 4
+    t.decimal  "total_price",           precision: 12, scale: 3
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+  end
+
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
+  add_index "order_items", ["product_id"], name: "index_order_items_on_product_id", using: :btree
+
+  create_table "order_statuses", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.decimal  "subtotal",                  precision: 12, scale: 3
+    t.decimal  "tax",                       precision: 12, scale: 3
+    t.decimal  "shipping",                  precision: 12, scale: 3
+    t.decimal  "total",                     precision: 12, scale: 3
+    t.integer  "order_status_id", limit: 4
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+  end
+
+  add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
+
   create_table "product_translations", force: :cascade do |t|
     t.integer  "product_id",  limit: 4,     null: false
     t.string   "locale",      limit: 255,   null: false
@@ -59,6 +90,7 @@ ActiveRecord::Schema.define(version: 20160419172015) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.string   "image",       limit: 255
+    t.boolean  "active"
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
@@ -82,5 +114,8 @@ ActiveRecord::Schema.define(version: 20160419172015) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "products"
+  add_foreign_key "orders", "order_statuses"
   add_foreign_key "products", "categories"
 end
