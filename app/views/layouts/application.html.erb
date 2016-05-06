@@ -35,7 +35,9 @@
 <!------------End Header ------------>
 <div class="container-fluid">
   <div class="row">
-    <%= render 'layouts/messages' %>
+    <div id="flash-messages">
+      <%= render 'layouts/messages' %>
+    </div>
     <%= devise_error_messages! %>
     <%= yield %>
   </div>

@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
   def show
     category = Category.find_by(id: params[:category_id])
     @product = category.products.with_translations(I18n.locale).find_by(id: params[:id])
+    @order_item = current_order.order_items.new
   end
 
   def edit
@@ -46,7 +47,7 @@ class ProductsController < ApplicationController
     if @product.save
       flash[:success] = 'Correcto'
     else
-      flash[:alert] = t('error')
+      flash[:danger] = t('error')
     end
     redirect_to root_path
   end

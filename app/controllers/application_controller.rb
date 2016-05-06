@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :categories, :client
 
+  helper_method :current_order
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
@@ -22,6 +24,14 @@ class ApplicationController < ActionController::Base
   def client
     if user_signed_in?
       @client = Client.find_by user_id: current_user.id
+    end
+  end
+
+  def current_order
+    if !session[:order_id].nil?
+      Order.find_by(id: 1)
+    else
+      Order.new
     end
   end
 end
