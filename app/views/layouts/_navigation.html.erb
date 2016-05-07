@@ -30,12 +30,16 @@
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <%= render 'layouts/navbar/basket_cart' %>
+        <li class="cart-text">
+          <%= render 'layouts/partials/cart_text' %>
+        </li>
+        <li>
         <%= if user_signed_in?
               render 'layouts/logged_in'
             else
               render 'layouts/login_form'
             end %>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

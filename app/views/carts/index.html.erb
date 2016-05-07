@@ -9,62 +9,11 @@
 <% end %>
 <% if @order_items.size == 0 %>
     <p class="text-center">
-      There are no items in your shopping cart. Please <%= link_to "go back", root_path %> and add some items to your
+      There are no items in your shopping cart. Please <%= link_to 'go back', root_path %> and add some items to your
       cart.
     </p>
 <% else %>
-    <div class="col-sm-12 col-md-10 col-md-offset-1 basket">
-      <table class="table table-hover">
-        <thead>
-        <tr>
-          <th>Product</th>
-          <th>Quantity</th>
-          <th class="text-center">Price</th>
-          <th class="text-center">Total</th>
-          <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <% @order_items.each do |order_item| %>
-            <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
-        <% end %>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><h5>Subtotal</h5></td>
-          <td class="text-right"><h5><strong>$24.59</strong></h5></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><h5>Estimated shipping</h5></td>
-          <td class="text-right"><h5><strong>$6.94</strong></h5></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><h3>Total</h3></td>
-          <td class="text-right"><h3><strong>$31.53</strong></h3></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <button type="button" class="btn btn-default">
-              <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-            </button>
-          </td>
-          <td>
-            <button type="button" class="btn btn-success">
-              Checkout <span class="glyphicon glyphicon-play"></span>
-            </button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+    <div class="col-sm-12 col-md-10 col-md-offset-1 cart-row">
+      <%= render 'carts/shopping_cart' %>
     </div>
 <% end %>

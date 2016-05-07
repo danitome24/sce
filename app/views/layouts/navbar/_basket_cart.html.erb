@@ -1,5 +1,5 @@
 <li>
-  <%= link_to carts_path, class: 'navbar-item' do %>
-      <span class="glyphicon glyphicon-shopping-cart"></span> 2 - Items
+  <%= link_to carts_path, class: 'navbar-item cart-text' do %>
+      <span class="glyphicon glyphicon-shopping-cart"></span> #{current_order.order_items.size} - Items
   <% end %>
 </li>
