@@ -7,8 +7,8 @@
           </a>
           <div class="media-body">
             <h4 class="media-heading"><a href="#"><%= product.name %></a></h4>
-            <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
-            <span>Status: </span><span class="text-warning"><strong>Stock</strong></span>
+            <h5 class="media-heading"> by <a href="#"><%= product.category.name %></a></h5>
+            <span><%= t('status') %></span><span class="text-warning"><strong><%= t('stock') %></strong></span>
           </div>
         </div>
       </td>
@@ -21,7 +21,7 @@
       <td class="col-md-2">
         <%= f.submit t('update'), class: 'btn btn-primary' %>
         <%= link_to t('remove'), order_item,
-                    {data: {confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?"},
+                    {data: {confirm: t('answer_delete', item: order_item.product.name)},
                      method: :delete, remote: true, class: 'btn btn-danger'} %>
       </td>
   <% end %>
