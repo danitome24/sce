@@ -1,0 +1,23 @@
+<div class="main">
+  <div class="container">
+    <h1>Express Checkout Details:
+    </h1>
+    <div>
+      <p>Token: <%= @token %></p>
+      <p>PayerID: <%= @payer_id %></p>
+      <p>1 <%= @details.params['first_name'] %> </p>
+      <p>2 <%= @details.params['last_name'] %> </p>
+      <p>3 <%= @details.params['payer'] %> </p>
+      <p>4 <%= @details.params['street1'] %> </p>
+      <p>5 <%= @details.params['country'] %> </p>
+      <p>6 <%= @details.params['state_or_province'] %> </p>
+      <p>7 <%= @details.params['payer_country'] %> </p>
+    </div>
+    <%= form_tag purchase_path do %>
+        <%= hidden_
+            field_tag 'token', @token %>
+        <%= hidden_field_tag 'PayerID', @payer_id %>
+        <%= submit_tag 'Finish Purchase' %>
+    <% end %>
+  </div>
+</div>

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Paypal payment
+gem 'activemerchant'
 # Deployment gems
 gem 'capistrano-rails', :group => :development
 gem 'capistrano3-puma'
