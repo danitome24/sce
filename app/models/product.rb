@@ -6,4 +6,14 @@ class Product < ActiveRecord::Base
   globalize_accessors :locales => I18n.available_locales, :attributes => [:name, :description]
   belongs_to :category
   mount_uploader :image, ImageUploader
+
+  def self.search(search)
+    if search
+      with_translations(I18n.locale).where('name LIKE ?', "%#{search}%")
+    else
+      return false
+    end
+  end
+
+
 end

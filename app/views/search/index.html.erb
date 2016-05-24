@@ -1,0 +1,7 @@
+<% if @products.present? %>
+    <% @products.each do |p| %>
+        <%= render 'products/product_row', product: p %>
+    <% end %>
+<% else %>
+    <p><%= t('no_products_found_search') %><%= params[:search] %>.</p>
+<% end %>

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       resources :products
     end
     resources :admins
+    resources :search, only: [:index]
     root 'pages#home'
     get '/basket', to: 'basket#index', as: 'basket'
     get '/clients/new', to: 'clients#new', as: 'clients'

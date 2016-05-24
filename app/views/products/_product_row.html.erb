@@ -12,7 +12,7 @@
       <p><span class="rupees"><%= product.price %> </span></p>
     </div>
     <div class="add-cart">
-      <h4><%= link_to 'Go to', category_product_path(id: product.id) %></h4>
+      <h4><%= link_to 'Go to', category_product_path(id: product.id, category_id: product.category_id) %></h4>
     </div>
     <div class="clear"></div>
   </div>
