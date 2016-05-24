@@ -8,6 +8,17 @@
           </div>
       <% end %>
       <div class="col-md-12 form-group">
+        <%= p.label t('image') %><br>
+        <% if p.object.image? %>
+            <%= image_tag p.object.image.thumb.url %>
+        <% else %>
+            <img src="http://placehold.it/120x120"
+                 alt="Alternate Text" class="img-responsive" />
+        <% end %>
+
+        <%= p.file_field :image, class: 'filestyle', 'data-icon' => false %>
+      </div>
+      <div class="col-md-12 form-group">
         <%= p.label t('category') %>
         <%= p.collection_select :category_id, @categories, :id, :name %>
       </div>
