@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  has_many :order_items
+  has_many :order_items, dependent: :destroy
 
   default_scope { where(active: true) }
   translates :name, :description
