@@ -14,8 +14,7 @@
       <p>7 <%= @details.params['payer_country'] %> </p>
     </div>
     <%= form_tag purchase_path do %>
-        <%= hidden_
-            field_tag 'token', @token %>
+        <%= hidden_field_tag 'token', @token %>
         <%= hidden_field_tag 'PayerID', @payer_id %>
         <%= submit_tag 'Finish Purchase' %>
     <% end %>
