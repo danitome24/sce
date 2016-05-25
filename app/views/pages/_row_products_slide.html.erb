@@ -1,3 +1,5 @@
 <div class="col-md-3">
-  <a href="#" class="thumbnail"><%= image_tag product.image.show.url, :style => 'max-width:100%' %></a>
+  <%= link_to category_product_path(category_id: product.category_id, id: product.id), class: 'thumbnail' do %>
+      <%= image_tag product.image.show.url, :style => 'max-width:100%' %>
+  <% end %>
 </div>
