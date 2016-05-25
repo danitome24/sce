@@ -6,8 +6,8 @@
             <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;">
           </a>
           <div class="media-body">
-            <h4 class="media-heading"><a href="#"><%= product.name %></a></h4>
-            <h5 class="media-heading"> by <a href="#"><%= product.category.name %></a></h5>
+            <p><%= link_to product.name, category_product_path(category_id: product.category_id, id: product.id), class: 'link-color-black' %></p>
+            <p><%= t('category') %>:<%= link_to product.category.name, category_products_path(category_id: product.category.id), class: 'link-color-black' %></p>
             <span><%= t('status') %></span><span class="text-warning"><strong><%= t('stock') %></strong></span>
           </div>
         </div>
