@@ -2,8 +2,8 @@ class BuysController < ApplicationController
   def express_checkout
     response = EXPRESS_GATEWAY.setup_purchase(2000,
                                               ip: request.remote_ip,
-                                              return_url: 'http://078fa360.ngrok.io/es/checkout_details',
-                                              cancel_return_url: 'http://078fa360.ngrok.io/es',
+                                              return_url: 'http://bba2923d.ngrok.io/es/checkout_details',
+                                              cancel_return_url: 'http://bba2923d.ngrok.io/es',
                                               currency: 'EUR',
                                               allow_guest_checkout: true,
                                               items: [{name: 'Order', description: '"Order  description', quantity: '1', amount: 2000}]

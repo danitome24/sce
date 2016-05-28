@@ -5,6 +5,7 @@
     <div>
       <p>Token: <%= @token %></p>
       <p>PayerID: <%= @payer_id %></p>
+      <%= @details.inspect %>
       <p>1 <%= @details.params['first_name'] %> </p>
       <p>2 <%= @details.params['last_name'] %> </p>
       <p>3 <%= @details.params['payer'] %> </p>

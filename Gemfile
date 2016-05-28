@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'awesome_print', :require => 'awesome_print'
 # Paypal payment
 gem 'activemerchant'
 # Deployment gems
