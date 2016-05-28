@@ -28,8 +28,13 @@ class ApplicationController < ActionController::Base
   end
 
   def current_order
-    if !session[:order_id].nil?
-      Order.find_by(id: 1)
+    if user_signed_in?
+      @search = Order.find_by(client_id: current_user.id)
+      if @search.blank?
+        Order.new(client_id: current_user.id)
+      else
+        @search
+      end
     else
       Order.new
     end
