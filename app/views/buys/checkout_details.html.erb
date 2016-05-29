@@ -1,23 +1,21 @@
 <div class="main">
   <div class="container">
-    <h1>Express Checkout Details:
-    </h1>
+    <legend><%= t('checkout_details') %></legend>
     <div>
-      <p>Token: <%= @token %></p>
-      <p>PayerID: <%= @payer_id %></p>
-      <%= @details.inspect %>
-      <p>1 <%= @details.params['first_name'] %> </p>
-      <p>2 <%= @details.params['last_name'] %> </p>
-      <p>3 <%= @details.params['payer'] %> </p>
-      <p>4 <%= @details.params['street1'] %> </p>
-      <p>5 <%= @details.params['country'] %> </p>
-      <p>6 <%= @details.params['state_or_province'] %> </p>
-      <p>7 <%= @details.params['payer_country'] %> </p>
+      <ul>
+        <li><%= t('firstname') %>: <%= @details.params['first_name'] %></li>
+        <li><%= t('lastname') %>: <%= @details.params['last_name'] %></li>
+        <li><%= t('subtotal') %>: <%= @details.params['order_total'] %>€</li>
+        <li><%= t('countryname') %>: <%= @details.params['country_name'] %></li>
+        <li><%= t('city') %>: <%= @details.params['city_name'] %></li>
+      </ul>
     </div>
-    <%= form_tag purchase_path do %>
-        <%= hidden_field_tag 'token', @token %>
-        <%= hidden_field_tag 'PayerID', @payer_id %>
-        <%= submit_tag 'Finish Purchase' %>
-    <% end %>
+    <div>
+      <%= form_tag purchase_path do %>
+          <%= hidden_field_tag 'token', @token %>
+          <%= hidden_field_tag 'PayerID', @payer_id %>
+          <%= submit_tag t('submit_purchase'), class: 'btn btn-success' %>
+      <% end %>
+    </div>
   </div>
 </div>

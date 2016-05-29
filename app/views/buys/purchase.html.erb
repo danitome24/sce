@@ -1,13 +1,11 @@
 <div class="main">
   <div class="container">
-    <h1>Result of the Purchase </h1>
-    <p>Token: <%= @t%></p>
-    <p>PayerID: <%= @p%></p>
+    <h1><%= t('result_purchase') %></h1>
     <p><%= @result.message%> </p>
     <% if @result.success? %>
-        <p>OK</p>
+        <p><%= t('purchase_success') %></p>
     <% else %>
-        <p>Error</p>
+        <p><%= t('error') %></p>
     <% end %>
     <%= button_to 'Back', root_path, :class => 'button', :method => :get  %>
   </div>

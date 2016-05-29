@@ -1,5 +1,9 @@
 class BuysController < ApplicationController
   def express_checkout
+    if !user_signed_in?
+      flash[:danger] = t('log_in_suggestion')
+      redirect_to root_path
+    end
     @order = Order.find_by(client_id: current_user.id)
     response = EXPRESS_GATEWAY.setup_purchase(@order.subtotal*100,
                                               ip: request.remote_ip,
