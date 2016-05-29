@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
 
   def current_order
     if user_signed_in?
-      @search = Order.find_by(client_id: current_user.id)
+      @search = Order.find_by(client_id: current_user.id, order_status_id: 1)
       if @search.blank?
         Order.new(client_id: current_user.id)
       else

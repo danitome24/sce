@@ -20,16 +20,18 @@ class BuysController < ApplicationController
   end
 
   def purchase
-    @order = Order.find_by(client_id: current_user.id)
+    order = Order.find_by(client_id: current_user.id)
     @tok = params[:token]
     @payer = params[:PayerID]
-    @result = EXPRESS_GATEWAY.purchase(@order.subtotal*100, {
+    @result = EXPRESS_GATEWAY.purchase(order.subtotal*100, {
         :token => @tok,
         :payer_id => @payer,
         :currency => 'EUR'
     })
     if @result.success?
-      Order.find_by(client_id: current_user.id).update(order_status_id: 3)
+      # Borramos provisionalmente
+      order.destroy
+      #Order.find_by(client_id: current_user.id).update(order_status_id: 3)
     end
   end
 end
