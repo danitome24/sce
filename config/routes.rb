@@ -19,7 +19,6 @@ Rails.application.routes.draw do
     resources :admins
     resources :search, only: [:index]
     root 'pages#home'
-    get '/basket', to: 'basket#index', as: 'basket'
     get '/clients/new', to: 'clients#new', as: 'clients'
     post '/clients', to: 'clients#create'
     get '/clients', to: 'clients#show', as: 'clients_show'
