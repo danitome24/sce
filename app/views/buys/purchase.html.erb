@@ -1,12 +1,12 @@
-<div class="main">
-  <div class="container">
+<div class="container">
+  <div class="row">
     <h1><%= t('result_purchase') %></h1>
-    <p><%= @result.message%> </p>
+    <p><%= @result.message %> </p>
     <% if @result.success? %>
         <p><%= t('purchase_success') %></p>
     <% else %>
         <p><%= t('error') %></p>
     <% end %>
-    <%= button_to 'Back', root_path, :class => 'button', :method => :get  %>
+    <%= button_to 'Back', root_path, :class => 'button', :method => :get %>
   </div>
 </div>

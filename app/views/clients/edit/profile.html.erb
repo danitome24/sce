@@ -1,48 +1,52 @@
-<%= render 'layouts/partials/nav_profile' %>
-<%= @client.errors.full_messages.first if @client.errors.any? %>
-<div class="col-sm-9">
-  <div class="col-sm-12">
-    <legend><%= t('profile') %></legend>
-  </div>
-  <%= form_for @client, :url => url_for(:controller => 'clients', :action => 'update'), :html => {:multipart => true, role: 'form'} do |c| %>
-      <%= c.hidden_field :user_id, :value => current_user.id %>
-      <div class="col-md-12 form-group">
-        <%= c.label t('photo') %><br>
-        <% if c.object.image? %>
-            <%= image_tag c.object.image.thumb.url %>
-        <% else %>
-            <img src="http://placehold.it/120x120"
-                 alt="Alternate Text" class="img-responsive" />
-        <% end %>
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'layouts/partials/nav_profile' %>
+    <%= @client.errors.full_messages.first if @client.errors.any? %>
+    <div class="col-sm-9">
+      <div class="col-sm-12">
+        <legend><%= t('profile') %></legend>
+      </div>
+      <%= form_for @client, :url => url_for(:controller => 'clients', :action => 'update'), :html => {:multipart => true, role: 'form'} do |c| %>
+          <%= c.hidden_field :user_id, :value => current_user.id %>
+          <div class="col-md-12 form-group">
+            <%= c.label t('photo') %><br>
+            <% if c.object.image? %>
+                <%= image_tag c.object.image.thumb.url %>
+            <% else %>
+                <img src="http://placehold.it/120x120"
+                     alt="Alternate Text" class="img-responsive"/>
+            <% end %>
 
-        <%= c.file_field :image, class: 'filestyle', 'data-icon' => false %>
-      </div>
-      <div class="col-md-6 form-group">
-        <%= c.label t('firstname') %><br>
-        <%= c.text_field :firstname, class: 'form-control' %>
-      </div>
-      <div class="col-md-6 form-group">
-        <%= c.label t('lastname') %><br>
-        <%= c.text_field :lastname, class: 'form-control' %>
-      </div>
-      <div class="col-md-6 form-group">
-        <%= c.label t('phone') %><br>
-        <%= c.text_field :phone, class: 'form-control' %>
-      </div>
-      <div class="col-md-6 form-group">
-        <%= c.label t('address') %><br>
-        <%= c.text_field :address, class: 'form-control' %>
-      </div>
-      <div class="col-md-6 form-group">
-        <%= c.label t('city') %><br>
-        <%= c.text_field :city, class: 'form-control' %>
-      </div>
-      <div class="col-md-6 form-group">
-        <%= c.label t('postalcode') %><br>
-        <%= c.text_field :postalcode, class: 'form-control' %>
-      </div>
-      <div class="actions">
-        <%= c.submit t('update'), class: 'btn btn-primary' %>
-      </div>
-  <% end %>
+            <%= c.file_field :image, class: 'filestyle', 'data-icon' => false %>
+          </div>
+          <div class="col-md-6 form-group">
+            <%= c.label t('firstname') %><br>
+            <%= c.text_field :firstname, class: 'form-control' %>
+          </div>
+          <div class="col-md-6 form-group">
+            <%= c.label t('lastname') %><br>
+            <%= c.text_field :lastname, class: 'form-control' %>
+          </div>
+          <div class="col-md-6 form-group">
+            <%= c.label t('phone') %><br>
+            <%= c.text_field :phone, class: 'form-control' %>
+          </div>
+          <div class="col-md-6 form-group">
+            <%= c.label t('address') %><br>
+            <%= c.text_field :address, class: 'form-control' %>
+          </div>
+          <div class="col-md-6 form-group">
+            <%= c.label t('city') %><br>
+            <%= c.text_field :city, class: 'form-control' %>
+          </div>
+          <div class="col-md-6 form-group">
+            <%= c.label t('postalcode') %><br>
+            <%= c.text_field :postalcode, class: 'form-control' %>
+          </div>
+          <div class="actions">
+            <%= c.submit t('update'), class: 'btn btn-primary' %>
+          </div>
+      <% end %>
+    </div>
+  </div>
 </div>

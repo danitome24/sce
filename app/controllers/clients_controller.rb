@@ -33,7 +33,7 @@ class ClientsController < ApplicationController
       flash[:success] = t('password_updated')
       redirect_to root_path
     else
-      flash[:error] = t('error')
+      flash[:danger] = t('error')
       redirect_to root_path
     end
   end
@@ -48,7 +48,7 @@ class ClientsController < ApplicationController
       flash[:success] = t('profile_update_correct')
       redirect_to controller: 'clients', action: 'edit'
     else
-      flash[:error] = t('error')
+      flash[:danger] = t('error')
       redirect_to root_path
     end
   end

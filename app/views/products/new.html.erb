@@ -1,33 +1,37 @@
-<div class="col-md-5 col-md-offset-2">
-  <legend><%= t('new_product') %></legend>
-  <%= form_for @product, url: {controller: 'products', action: 'create'}, :html => {:multipart => true, role: 'form'} do |p| %>
-      <% Product.globalize_attribute_names.each do |lang| %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-2">
+      <legend><%= t('new_product') %></legend>
+      <%= form_for @product, url: {controller: 'products', action: 'create'}, :html => {:multipart => true, role: 'form'} do |p| %>
+          <% Product.globalize_attribute_names.each do |lang| %>
+              <div class="col-md-12 form-group">
+                <%= p.label lang %>
+                <%= p.text_field lang, class: 'form-control' %>
+              </div>
+          <% end %>
           <div class="col-md-12 form-group">
-            <%= p.label lang %>
-            <%= p.text_field lang, class: 'form-control' %>
+            <%= p.label t('image') %><br>
+            <% if p.object.image? %>
+                <%= image_tag p.object.image.thumb.url %>
+            <% else %>
+                <img src="http://placehold.it/120x120"
+                     alt="Alternate Text" class="img-responsive"/>
+            <% end %>
+
+            <%= p.file_field :image, class: 'filestyle', 'data-icon' => false %>
+          </div>
+          <div class="col-md-12 form-group">
+            <%= p.label t('category') %>
+            <%= p.collection_select :category_id, @categories, :id, :name %>
+          </div>
+          <div class="col-md-12 form-group">
+            <%= p.label t('price') %>
+            <%= p.number_field :price, :step => 0.01, class: 'form-control' %>
+          </div>
+          <div class="actions">
+            <%= p.submit t('add'), class: 'btn btn-primary' %>
           </div>
       <% end %>
-      <div class="col-md-12 form-group">
-        <%= p.label t('image') %><br>
-        <% if p.object.image? %>
-            <%= image_tag p.object.image.thumb.url %>
-        <% else %>
-            <img src="http://placehold.it/120x120"
-                 alt="Alternate Text" class="img-responsive" />
-        <% end %>
-
-        <%= p.file_field :image, class: 'filestyle', 'data-icon' => false %>
-      </div>
-      <div class="col-md-12 form-group">
-        <%= p.label t('category') %>
-        <%= p.collection_select :category_id, @categories, :id, :name %>
-      </div>
-      <div class="col-md-12 form-group">
-        <%= p.label t('price') %>
-        <%= p.number_field :price, :step => 0.01, class: 'form-control' %>
-      </div>
-      <div class="actions">
-        <%= p.submit t('add'), class: 'btn btn-primary' %>
-      </div>
-  <% end %>
+    </div>
+  </div>
 </div>

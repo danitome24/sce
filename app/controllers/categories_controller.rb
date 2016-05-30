@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
       flash[:success] = t('category_created')
       redirect_to root_path
     else
-      flash[:alert] = t('error')
+      flash[:danger] = t('error')
     end
   end
 
@@ -40,7 +40,7 @@ class CategoriesController < ApplicationController
       flash[:success] = t('category_updated')
       redirect_to controller: 'admins', action: 'index'
     else
-      flash[:error] = t('error')
+      flash[:danger] = t('error')
       redirect_to root_path
     end
   end

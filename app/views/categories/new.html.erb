@@ -1,16 +1,18 @@
-<div class="col-md-5 col-md-offset-2">
-  <legend><%= t('new_category') %></legend>
-  <%= form_for @category, :html => {:multipart => true, role: 'form'} do |f| %>
-      <div class="col-md-12 form-group">
-        <%= f.label t('name') %>
-        <%= f.text_field :name, class: 'form-control' %>
-      </div>
-      <div class="col-md-12 form-group">
-        <%= f.label t('description') %>
-        <%= f.text_area :description, class: 'form-control' %>
-      </div>
-      <div class="actions">
-        <%= f.submit t('add'), class: 'btn btn-primary' %>
-      </div>
-  <% end %>
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-2">
+    <legend><%= t('new_category') %></legend>
+    <%= form_for @category, :html => {:multipart => true, role: 'form'} do |f| %>
+        <div class="col-md-12 form-group">
+          <%= f.label t('name') %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="col-md-12 form-group">
+          <%= f.label t('description') %>
+          <%= f.text_area :description, class: 'form-control' %>
+        </div>
+        <div class="actions">
+          <%= f.submit t('add'), class: 'btn btn-primary' %>
+        </div>
+    <% end %>
+  </div>
 </div>
