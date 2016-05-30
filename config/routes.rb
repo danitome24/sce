@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     resources :carts, only: [:index]
     resources :order_items, only: [:create, :update, :destroy]
     devise_for :users, :controllers => {:passwords => 'passwords', registrations: 'registrations'}
+    get '/:static', to: 'pages#static', as: 'static'
   end
 
 

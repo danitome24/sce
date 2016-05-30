@@ -47,10 +47,9 @@
     </div>
     <div class="footer-nav">
       <ul>
-        <li><a href="#">Terms of Use</a> :</li>
-        <li><a href="#">Privacy Policy</a> :</li>
-        <li><a href="contact.html">Contact Us</a> :</li>
-        <li><a href="#">Sitemap</a></li>
+        <li><%= link_to t('contact_us'), static_path(static: 'contact') %>:</li>
+        <li><%= link_to t('privacy_policy'), static_path(static: 'privacy') %>:</li>
+        <li><%= link_to t('about_us'), static_path(static: 'about') %></li>
       </ul>
     </div>
   </div>
