@@ -19,7 +19,6 @@
       <td class="col-md-1 text-center"><strong><%= number_to_currency(order_item.unit_price, unit: '€', format: '%n %u') %></strong></td>
       <td class="col-md-1 text-center"><strong><%= number_to_currency(order_item.total_price, unit: '€', format: '%n %u') %></strong></td>
       <td class="col-md-2">
-        <%= f.submit t('update'), class: 'btn btn-primary' %>
         <%= link_to t('remove'), order_item,
                     {data: {confirm: t('answer_delete', item: order_item.product.name)},
                      method: :delete, remote: true, class: 'btn btn-danger'} %>

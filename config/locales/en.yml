@@ -119,6 +119,8 @@ en:
           models:
             user:
               attributes:
+                email:
+                  taken: 'Email taken'
                 password:
                   too_short: 'Password is too short'
                 password_confirmation:
@@ -128,3 +130,4 @@ en:
   password_updated: "Password updated"
   order_created: "Added to cart"
   product_created: "Product created"
+  password_requirements: "Password mus have 8 characters length"

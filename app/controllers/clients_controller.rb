@@ -34,7 +34,7 @@ class ClientsController < ApplicationController
       redirect_to root_path
     else
       flash[:danger] = t('error')
-      redirect_to root_path
+      redirect_to clients_edit_path
     end
   end
 

@@ -119,6 +119,8 @@ es:
         models:
           user:
             attributes:
+              email:
+                taken: 'Correo ya usado'
               password:
                 too_short: 'La contraseña es muy corta'
               password_confirmation:
@@ -128,3 +130,4 @@ es:
   password_updated: "Contraseña actualizada"
   order_created: "Añadido al carrito"
   product_created: "Producto creado"
+  password_requirements: "La contraseña ha de tener longitud mayor a 8"

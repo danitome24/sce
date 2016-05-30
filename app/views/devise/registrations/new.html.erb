@@ -2,6 +2,7 @@
   <div class="row">
     <div class="panel-body col-md-6 col-md-offset-3">
       <h3><%= t('register') %></h3>
+      <p><%= t('password_requirements') %></p>
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: {role: "form"}) do |f| %>
           <div class="form-group">
             <%= f.label :email, t('email') %>

@@ -7,11 +7,10 @@
       <div class="row">
         <div class="col-md-12">
           <%= t('login_via') %>
-          <div class="social-buttons">
-            <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-            <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-          </div>
-          <%= t('or') %>
+          <!--<div class="social-buttons">-->
+            <!--<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>-->
+            <!--<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>-->
+          <!--</div>-->
           <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:id => "login-nav"}) do |f| %>
               <div class="form-group">
                 <%= f.label :email, t('email') %><br/>

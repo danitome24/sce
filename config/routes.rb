@@ -30,8 +30,8 @@ Rails.application.routes.draw do
     post '/purchase', to: 'buys#purchase'
     resources :carts, only: [:index]
     resources :order_items, only: [:create, :update, :destroy]
-    devise_for :users, :controllers => {:passwords => 'passwords', registrations: 'registrations'}
     get '/:static', to: 'pages#static', as: 'static'
+    devise_for :users, :controllers => {:passwords => 'passwords', registrations: 'registrations'}
   end
 
 
