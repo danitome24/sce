@@ -5,11 +5,11 @@ class OrderItemsController < ApplicationController
     if @order.save
       session[:order_id] = @order.id
       respond_to do |format|
-        format.js { flash[:success] = 'Bien' }
+        format.js { flash[:success] = t('order_created') }
       end
     else
       respond_to do |format|
-        format.js { flash[:danger] = 'MAAAl PEEERRAKA' }
+        format.js { flash[:danger] = t('error') }
       end
     end
   end

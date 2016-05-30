@@ -7,8 +7,8 @@ class BuysController < ApplicationController
     @order = Order.find_by(client_id: current_user.id)
     response = EXPRESS_GATEWAY.setup_purchase(@order.subtotal*100,
                                               ip: request.remote_ip,
-                                              return_url: 'http://8e361085.ngrok.io/es/checkout_details',
-                                              cancel_return_url: 'http://8e361085.ngrok.io/es',
+                                              return_url: 'http://dec457b3.ngrok.io/es/checkout_details',
+                                              cancel_return_url: 'http://dec457b3.ngrok.io/es',
                                               currency: 'EUR',
                                               allow_guest_checkout: true,
                                               items: [{name: 'Order', description: '"Order  description', quantity: '1', amount: @order.subtotal*100}]

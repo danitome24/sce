@@ -96,7 +96,7 @@ es:
   stock: "Stock"
   answer_delete: "¿Estás seguro que quieres borrar el producto %{item} de tu carrito de la compra?"
   product: "Producto"
-  quantity: "Quantity"
+  quantity: "Cantidad"
   subtotal: "Subtotal"
   estimated_shipping: "Gastos envío"
   total: "Total"
@@ -114,3 +114,17 @@ es:
   result_purchase: "Resultado de compra"
   purchase_success: "La compra ha sido satisfactoria"
   about_us: "Sobre nosotros"
+  activerecord:
+      errors:
+        models:
+          user:
+            attributes:
+              password:
+                too_short: 'La contraseña es muy corta'
+              password_confirmation:
+                confirmation: 'Las contraseñas no coinciden'
+  all_inputs_required: "Todos los campos tienen que ser rellenados"
+  client_data: "Información de usuario"
+  password_updated: "Contraseña actualizada"
+  order_created: "Añadido al carrito"
+  product_created: "Producto creado"

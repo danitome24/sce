@@ -85,6 +85,7 @@ en:
   category_destroyed: "Category destroyed successfuly!"
   category_updated: "Category updated successfuly"
   edit_category: "Edit category"
+  products: "Products"
   new_product: "New product"
   edit_product: "Edit product"
   product_updated: "Correct! Product updated"
@@ -95,7 +96,7 @@ en:
   stock: "Stock"
   answer_delete: "Are you sure you wish to delete the product %{item} from your cart?"
   product: "Product"
-  quantity: "Cantidad"
+  quantity: "Quantity"
   subtotal: "Subtotal"
   estimated_shipping: "Estimated shipping"
   total: "Total"
@@ -113,3 +114,17 @@ en:
   result_purchase: "Purchase result"
   purchase_success: "The purchase was successful"
   about_us: "About us"
+  activerecord:
+        errors:
+          models:
+            user:
+              attributes:
+                password:
+                  too_short: 'Password is too short'
+                password_confirmation:
+                  confirmation: 'Passwords does not match'
+  all_inputs_required: "All inputs are required"
+  client_data: "User data"
+  password_updated: "Password updated"
+  order_created: "Added to cart"
+  product_created: "Product created"

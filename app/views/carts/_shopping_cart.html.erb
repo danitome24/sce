@@ -19,22 +19,22 @@
     <td></td>
     <td></td>
     <td><h5><%= t('subtotal') %></h5></td>
-    <td class="text-right"><h5><strong><%= number_to_currency(current_order.subtotal, unit: '€', format: '%n %u') %></strong></h5></td>
+    <td class="text-right">
+      <h5><strong><%= number_to_currency(current_order.subtotal, unit: '€', format: '%n %u') %></strong></h5></td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td></td>
     <td>
-      <button type="button" class="btn btn-default">
+      <%= link_to category_products_path(category_id: 1) , :class => 'btn btn-default' do %>
         <span class="glyphicon glyphicon-shopping-cart"></span> <%= t('continue_shopping') %>
-      </button>
+      <% end %>
     </td>
     <td>
-      <%= link_to(image_tag('https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif'), express_checkout_path)%>
-      <button type="button" class="btn btn-success">
-        <%= t('checkout') %> <span class="glyphicon glyphicon-play"></span>
-      </button>
+      <%= link_to  express_checkout_path, :class => 'btn btn-success' do %>
+          <%= t('checkout') %><span class="glyphicon glyphicon-play"></span>
+      <% end %>
     </td>
   </tr>
   </tbody>

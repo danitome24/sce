@@ -12,9 +12,10 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     if @category.save
       flash[:success] = t('category_created')
-      redirect_to root_path
+      redirect_to admins_path
     else
       flash[:danger] = t('error')
+      redirect_to root_path
     end
   end
 
@@ -38,7 +39,7 @@ class CategoriesController < ApplicationController
 
     if @category.update(category_params)
       flash[:success] = t('category_updated')
-      redirect_to controller: 'admins', action: 'index'
+      redirect_to admins_path
     else
       flash[:danger] = t('error')
       redirect_to root_path

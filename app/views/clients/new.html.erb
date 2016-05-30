@@ -1,38 +1,42 @@
-<div class="panel panel-default devise-bs">
+<div class="container-fluid">
   <div class="row">
     <div class="panel-body col-md-6 col-md-offset-3">
-      <%= form_for @client,  :url => url_for(:controller => 'clients', :action => 'create'), html: {role: 'form'} do |c| %>
-          <%= c.hidden_field :user_id, :value => current_user.id %>
+      <legend><%= t('client_data') %></legend>
+      <%= t('all_inputs_required') %>
+      <%= form_for @client, :url => url_for(:controller => 'clients', :action => 'create'), html: {role: 'form'} do |c| %>
+          <%= c.hidden_field :user_id, :value => current_user.id, :required => true %>
           <div class="col-md-6 form-group">
             <%= c.label 'firstname' %><br>
-            <%= c.text_field :firstname, class: 'form-control' %>
+            <%= c.text_field :firstname, class: 'form-control', :required => true %>
           </div>
           <div class="col-md-6 form-group">
             <%= c.label 'lastname' %><br>
-            <%= c.text_field :lastname, class: 'form-control' %>
+            <%= c.text_field :lastname, class: 'form-control', :required => true %>
           </div>
           <div class="col-md-6 form-group">
             <%= c.label 'phone' %><br>
-            <%= c.text_field :phone, class: 'form-control'  %>
+            <%= c.text_field :phone, class: 'form-control', :required => true %>
           </div>
           <div class="col-md-6 form-group">
             <%= c.label 'address' %><br>
-            <%= c.text_field :address, class: 'form-control'  %>
+            <%= c.text_field :address, class: 'form-control', :required => true %>
           </div>
           <div class="col-md-6 form-group">
             <%= c.label 'city' %><br>
-            <%= c.text_field :city, class: 'form-control'  %>
+            <%= c.text_field :city, class: 'form-control', :required => true %>
           </div>
           <div class="col-md-6 form-group">
             <%= c.label 'postalcode' %><br>
-            <%= c.text_field :postalcode, class: 'form-control'  %>
+            <%= c.text_field :postalcode, class: 'form-control', :required => true %>
           </div>
           <div class="col-md-6 form-group">
             <%= c.label 'ccnumber' %><br>
-            <%= c.text_field :ccnumber, class: 'form-control'  %>
+            <%= c.text_field :ccnumber, class: 'form-control', :required => true %>
           </div>
-          <div class="actions">
-            <%= c.submit t('create'), class: 'btn btn-primary' %>
+          <div class="col-md-8">
+            <div class="actions">
+              <%= c.submit t('create'), class: 'btn btn-primary' %>
+            </div>
           </div>
       <% end %>
     </div>

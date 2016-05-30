@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
     @product = Product.find_by(id: params[:id])
     if @product.update(product_params)
       flash[:success] = t('product_updated')
-      redirect_to controller: 'admins', id: params[:category_id]
+      redirect_to admin_path(id: params[:category_id])
     else
       flash[:danger] = t('error')
       redirect_to root_path
@@ -45,11 +45,12 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      flash[:success] = 'Correcto'
+      flash[:success] = t('product_created')
+      redirect_to admin_path(id: product_params[:category_id])
     else
       flash[:danger] = t('error')
+      redirect_to root_path
     end
-    redirect_to root_path
   end
 
   private
