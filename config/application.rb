@@ -35,7 +35,7 @@ module Practica
         authentication: 'plain',
         enable_starttls_auto: true,
         user_name: 'compupack.sce@gmail.com',
-        password: 'sanfizdoseo',
+        password: '******',
     }
 
     config.action_mailer.default_url_options = {
